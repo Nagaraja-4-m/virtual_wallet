@@ -1,5 +1,6 @@
 # virtual_wallet
-Virtual wallet
+
+<h2>Virtual wallet</h2>
 
 <div>
    <p>1. Landing page:</p>
@@ -9,7 +10,7 @@ Virtual wallet
 <p>3. Login: </p>
       <img src="https://user-images.githubusercontent.com/89149882/201962935-747b3e9b-5ac6-48fa-b36a-6cb3ca7cb457.png" />
 <p>4. Send Money:</p>
-      <img src=" https://user-images.githubusercontent.com/89149882/201963416-00f420ea-75a1-443d-8130-67bec547a6c7.png" />
+      <img src="https://user-images.githubusercontent.com/89149882/201963416-00f420ea-75a1-443d-8130-67bec547a6c7.png" />
 <p>5. Wallet:</p>
       <img src="https://user-images.githubusercontent.com/89149882/201963611-ca2c9ba6-4c41-4808-86b5-7bbac063ca1a.png" width="384" height="180"/>
       <img src="https://user-images.githubusercontent.com/89149882/201963722-960f85f4-020c-4123-a9b3-292d3959e1e1.png" width="384" height="180"/>
