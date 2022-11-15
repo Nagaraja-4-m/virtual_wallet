@@ -1,0 +1,60 @@
+
+{% extends 'dashboard.html' %}
+{% load static %}
+{% block services %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/services.css' %}" >
+</head>
+<div class="service">
+    <p class="info"> <span>List of money requests you have received. </span> </p>
+    <form  method="post">
+    
+        <table>
+        <head>
+            <tr>
+                <th colspan="7">All Requests </th>
+            </tr>
+        </head>
+        <body>
+        {% if requests %}
+            <tr>
+                <th>Sl. No</th>
+                <th>Date</th>
+                <th>Amount</th>
+                <th>Requested by </th>
+                <th> Remark </th>
+                <th> Status </th>
+                <th> Actions </th>
+            </tr>
+            {% for request in requests %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ request.date }}</td>
+                    <td>{{ request.amount }}</td>
+                    <td> {{ request.requested_by.fullname }} &nbsp; - {{ request.requested_by.email}}</td>
+                    <td> {{ request.remark }}</td>
+                    {% if request.status == 0 %}
+                        <td> requested </td>
+                        <td>
+                            <a href="{% url 'req_action'  request.id 1 %}"><button class="btn submit" type="button">Accept</button></a>
+                            <a href="{% url 'req_action'  request.id 0 %}"><button class="btn cancel" type="button"> Deny</button></a>
+                        </td>
+                    {% elif request.status == 1 %}
+                        <td> accepted </td>
+                        <td>Money sent </td>
+                    {% elif request.status == 2 %}
+                        <td> denied </td>
+                        <td> You have denied this </td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+            {% else  %}
+                <tr>
+                    <td colspan="7">No requests found</td>
+                </tr>
+            {% endif %}
+        </body>
+    </table>
+</form>
+</div>
+{% endblock services %}

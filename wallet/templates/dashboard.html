@@ -1,0 +1,23 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/dashboard.css' %}" >
+</head>
+<div class="container">
+    <div class="subnavbar">
+        <h4> {{ title }} </h4>
+        <div class="menu">
+            <ul>
+                <li><a href="wallet" active> Wallet </a></li>
+                <li><a href="send-money"> Send Money </a></li>
+                <li><a href="req-money"> Request Money </a></li>
+                <li><a href="req-received"> Requests Received </a></li>
+            </ul>
+        </div>
+    </div>
+        {% block services%}
+        {% endblock services %}    
+</div>
+{% endblock content %}

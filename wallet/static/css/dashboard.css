@@ -1,0 +1,41 @@
+
+.container
+{
+    margin: 4px 80px;
+}
+.subnavbar{
+    padding: 0px 10px;
+    background-color:grey;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    color: white;
+}
+a{
+    color:white;
+}
+
+.subnavbar ul
+{   
+    display: flex;
+    list-style-type: none;
+}
+
+.subnavbar ul li
+{
+    margin: 0px 12px;
+    font-weight: bold;
+
+}
+.subnavbar ul li a:hover
+{
+    color:blue;
+}
+
+.subnavbar h4
+{
+    text-transform:uppercase;
+    color:white;
+    font-weight: bold;
+}
+

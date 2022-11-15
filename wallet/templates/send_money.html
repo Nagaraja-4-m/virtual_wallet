@@ -1,0 +1,36 @@
+
+{% extends 'dashboard.html' %}
+{% load static %}
+{% block services %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/services.css' %}" >
+</head>
+<div class="service">
+    <p class="info"> <span>Select a user and specify amount to send. </span> </p>
+    <div class="form">
+        {% if status %}
+            <p class="msg-success">{{ message }} </p>
+        {% elif not status %}
+            <p class="msg-failed"> {{ message }} </p>
+        {% endif %}
+
+    <form class="send-money-form" action="" method="post">
+        <select name="userid" required>
+            <option value=""> Select User</option>
+            {% for user in users %}
+                <option value="{{ user.id }}"> {{ user.fullname}} &nbsp; - &nbsp; {{ user.email }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <input type="number" name="amount" placeholder="Enter amount" min="1.0" max="100000" step="0.1"  required/>
+        <br>
+        <input type="text" name="remark" placeholder="Remarks"  required/>
+        <br>
+        <br>
+        <button  class="btn submit" type="submit"> Send money</button>
+        <!-- <input type="submit" value="send money"> -->
+    </form>
+</div>
+</div>
+
+{% endblock services %}

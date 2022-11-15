@@ -1,0 +1,131 @@
+body{
+    margin:0;
+    padding: 0;
+    background-color: rgba(244, 240, 240, 0.885);
+    font-family:'poppins','sans-serif';
+}
+a{
+    text-decoration: none;
+}
+.navbar{
+    background-color:black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.navbar .left_corner{
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: large;
+}
+.navbar .left_corner a{
+    color: white;
+}
+
+.navbar .left_corner a:hover{
+    color: wheat;
+}
+
+.navbar .right_corner ul{
+    display: flex;
+    list-style-type: none;
+    margin-right:14px;
+}
+.navbar .right_corner a{
+    /* display: block; */
+    padding-left: 24px;
+    color: white;
+}
+.navbar .right_corner a:hover
+{
+    color:blue;
+}
+
+.navbar .right_corner .un-authenticated a{
+    display: block;
+    background-color:snow;
+    margin-left: 10px;
+    padding: 6px;
+    color: black;
+}
+.navbar .right_corner .un-authenticated a:hover{
+    background-color:rgb(209, 205, 205);
+}
+
+
+
+/* LOGIN form  */
+
+.popup
+{
+    width: 400px;
+    background:#fff;
+    border-radius: 6px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    text-align: center;
+    padding: 4px 30px 30px;
+    color: #333;
+    transform: translate(-50%,-50%) scale(1);
+    box-shadow: 0px 0px 40px 10px silver;
+}
+.loginform{
+     /* display: none; */
+     visibility: hidden;
+    
+}
+
+.signupform{
+     /* display: none; */
+     visibility: hidden;
+}
+
+.popup form{
+    justify-items: center;
+
+}
+
+.popup  input,.popup select {
+    display: block;
+    width: 376px;
+    padding:8px 10px;
+    margin-bottom: 20px;
+    border-style: solid ;
+    font-size:large;
+}
+
+.popup  select{
+    width: 100%;
+}
+.buttons
+{
+    display: flex;
+    justify-content:space-evenly;
+
+}
+.btn{
+    padding: 10px 20px;
+    outline: none;
+    border-style:none;
+    color: white;
+    font-weight: 600;
+    font-size:16px;
+    cursor: pointer;
+    box-shadow: 0px 0px 1px 1px gray;
+}
+
+.cancel{
+    background-color: red;
+}
+.cancel:hover{
+    background-color: rgb(186, 21, 21);
+}
+.submit{
+    background-color:rgb(53, 163, 51);
+}
+.submit:hover{
+    background-color:rgb(15, 121, 13);
+}

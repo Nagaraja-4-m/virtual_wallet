@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" >
+</head>
+
+<body>
+    <!-- NAVIGATION BAR -->
+    <nav>
+        <div class="navbar">
+            <div class="left_corner">
+                <h3> <a href="/" > VIRTUAL WALLET </a> </h3>
+            </div>
+            {% if logged_user.isAuthenticated %}
+                <div class="right_corner">
+                    <ul class="authenticated">
+                    <li> <a href=""> {{ logged_user.fullname }}</a></li>
+                    <li> <a href="auth/logout"> Logout </a></li>
+                    </ul>
+                </div>
+            {% else %}
+                <div class="right_corner">
+                    <ul class="un-authenticated">
+                        <li> <a onclick="showPopup('login')" > Login </a></li>
+                        <li> <a onclick="showPopup('signup')"> Sign up </a></li>
+                    </ul>
+                </div>
+                
+            {% endif %}
+    </nav>
+    <!-- NAVIGATION BAR ENDS-->
+
+    <div style="text-align:center;">
+        {% if logged_user.isAuthenticated %}
+            {% block content %}
+            {% endblock content %}
+        {% else %}
+            <h2> Welcome to Virtual Wallet </h2>
+            <p> Please Login / Sign up to use. </p>
+        {% endif %}
+    </div>
+
+    
+
+        <div class="popup loginform" id="loginform">
+            <h2>Login</h2>
+            {% csrf_token %}
+            <form action="auth/login" method="POST">
+                <input type="email" name="email" id="email" placeholder="Email Id">
+                <input type="password" name="password" id="password" placeholder="Password">
+            <div class="buttons">
+                <button class="btn cancel" type="button" onclick="hidePopup()">Cancel</button>
+                <button class="btn submit" type="submit" > Login </button>
+            </div>  
+        </form>
+        </div>
+        
+        <div class="popup signupform" id="signupform">
+            <h2>Registration</h2>
+            <form action="auth/register" method="POST">
+                <input type="email" name="email"  placeholder="Username (email)" required>
+                <input type="text" name="fullname" placeholder="Full name" required>
+                <input type="password" name="password" placeholder="Create Password" required>
+                <select name="user_type" id="usertype" required>
+                    <option value="">Select user type</option>
+                    <option value="premium"> Premium</option>
+                    <option value="non-premium">Non-Premium</option>
+                </select>
+            <div class="buttons">
+                <button class="btn cancel" type="button" onclick="hidePopup()">Cancel</button>
+                <button class="btn submit" type="submit" > Sign up </button>
+            </div>            
+            </form>
+        </div>
+    </div>
+</body>
+
+
+
+    <script>
+        let loginform=document.getElementById('loginform');
+        let signupform=popup=document.getElementById('signupform');
+
+        function showPopup(form){
+            if (form=='login'){
+                signupform.style.visibility='hidden';
+                loginform.style.visibility='visible';
+                
+            }
+            else if (form =='signup'){
+                loginform.style.visibility='hidden';
+                signupform.style.visibility='visible';
+            }
+        }
+        function hidePopup()
+        {
+            loginform.style.visibility='hidden';
+            signupform.style.visibility='hidden';
+        }
+    
+    </script>
+
+    
+</html>

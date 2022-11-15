@@ -1,0 +1,38 @@
+
+{% extends 'dashboard.html' %}
+{% load static %}
+{% block services %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/services.css' %}" >
+</head>
+<div class="service">
+    <h4 class="info"> Balance : <span class="balance">{{ balance }} </span> </h4>
+    <table>
+        <head>
+            <tr>
+                <th colspan="6">All Transactions </th>
+            </tr>
+        </head>
+        <body>
+            <tr>
+                <th>Sl. No</th>
+                <th>Date</th>
+                <th>Amount</th>
+                <th>Cr / Db </th>
+                <th> Balance </th>
+                <th> Remarks </th>
+            </tr>
+            {% for transaction in transactions %}
+            <tr>
+                <td>{{ forloop.counter  }}</td>
+                <td> {{ transaction.date }} </td>
+                <td> {{transaction.amount}} </td>
+                <td> {{transaction.transfer_type}} </td>
+                <td> {{transaction.balance}} </td>
+                <td> {{transaction.remark}} </td>
+            </tr>
+            {% endfor %}
+        </body>
+    </table>
+</div>
+{% endblock services %}
