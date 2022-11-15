@@ -2,6 +2,10 @@
 
 <h2>Virtual wallet</h2>
 
+<h3> Technologies used:</h3>
+
+
+<h3> Screenshots :</h3>
 <div>
    <p>1. Landing page:</p>
       <img src="https://user-images.githubusercontent.com/89149882/201962293-15d5893f-c930-48c5-b1f4-b30ea7e625b3.png" />
