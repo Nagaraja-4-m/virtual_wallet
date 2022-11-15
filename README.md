@@ -3,7 +3,14 @@
 <h2>Virtual wallet</h2>
 
 <h3> Technologies used:</h3>
-
+<ul>
+   <li> HTML</li>
+   <li> CSS </li>
+   <li> JavaScript </li>
+   <li> Python </li>
+   <li> Django </li>
+   <li> Postgres </li>
+</ul>
 
 <h3> Screenshots :</h3>
 <div>
